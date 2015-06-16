@@ -1,9 +1,16 @@
-echo "==========================="
-echo "Running Capybara"
-echo "==========================="
+echo "=============================="
+echo "Running Capybara with Selenium"
+echo "=============================="
 pushd capybara; time rspec spec; popd
+echo ""
 
-echo "==========================="
+echo "==============================="
+echo "Running Capybara with PhantomJS"
+echo "==============================="
+pushd capybara; time PHANTOMJS=true rspec spec; popd
+echo ""
+
+echo "=============="
 echo "Running Casper"
-echo "==========================="
+echo "=============="
 pushd casperjs; time ./node_modules/.bin/casperjs spec/*.js; popd

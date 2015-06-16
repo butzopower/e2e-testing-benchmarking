@@ -2,9 +2,12 @@ require "capybara"
 require "capybara/rspec"
 require "capybara/dsl"
 
-# Capybara.current_driver = :selenium
-require "capybara/poltergeist"
-Capybara.current_driver = :poltergeist
+Capybara.current_driver = :selenium
+
+if ENV["PHANTOMJS"] == "true"
+  require "capybara/poltergeist"
+  Capybara.current_driver = :poltergeist
+end
 
 Capybara.app_host = "http://localhost:8080"
 Capybara.server_host = "localhost"
