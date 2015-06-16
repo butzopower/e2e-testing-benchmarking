@@ -1,0 +1,9 @@
+echo "==========================="
+echo "Running Capybara"
+echo "==========================="
+pushd capybara; time rspec spec; popd
+
+echo "==========================="
+echo "Running Casper"
+echo "==========================="
+pushd casperjs; time ./node_modules/.bin/casperjs spec/*.js; popd
