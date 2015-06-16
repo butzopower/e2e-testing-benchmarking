@@ -1,0 +1,7 @@
+pairs:
+  bb: Brian Butz; bbutz
+  ab: Adam Berkovec; aberkovec
+
+email:
+  prefix: pair
+  domain: pivotal.io
