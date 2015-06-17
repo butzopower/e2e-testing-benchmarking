@@ -1,20 +1,9 @@
-require "capybara"
-require "capybara/rspec"
-require "capybara/dsl"
+require "spec_helper"
 
-Capybara.current_driver = :selenium
-
-if ENV["PHANTOMJS"] == "true"
-  require "capybara/poltergeist"
-  Capybara.current_driver = :poltergeist
-end
-
-Capybara.app_host = "http://localhost:8080"
-Capybara.server_host = "localhost"
-Capybara.server_port = "8080"
-
-describe "logging and logging out" do
-  include Capybara::DSL
+describe "logging and logging out", js: true do
+  Capybara.app_host = "http://localhost:8080"
+  Capybara.server_host = "localhost"
+  Capybara.server_port = "8080"
 
   it "works" do
     visit "/uaa"

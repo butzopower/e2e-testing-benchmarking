@@ -12,6 +12,6 @@ casper.waitForText("Where to?", function() {
     this.clickLabel('Sign Out', 'a');
 });
 
-casper.waitForText("Welcome!")
+casper.waitForText("Welcome!");
 
 casper.run();
